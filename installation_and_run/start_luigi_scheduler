@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# get the project location
+project_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+luigid --background --pidfile ${project_dir}/luigi/server_logs/pidfile.log --logdir ${project_dir}/../luigi/server_logs --state-path ${project_dir}/../luigi/server_logs/statefile.log

@@ -1,0 +1,864 @@
+{
+	"info": {
+		"_postman_id": "b22fa4df-28c9-4af4-997e-3f047bb236ff",
+		"name": "Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CellProfiler POST",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"job_id\": \"cellprofiler_run6\"\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/proto/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"proto",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Script",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "harvard",
+							"description": "test username description",
+							"type": "text"
+						},
+						{
+							"key": "filename",
+							"value": "4_channel",
+							"description": "filename description",
+							"type": "text"
+						},
+						{
+							"key": "data",
+							"type": "file",
+							"src": ""
+						},
+						{
+							"key": "description",
+							"value": "to_be_deleted",
+							"description": "description",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/script/upload/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"script",
+						"upload",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Pipeline",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pipeline_id",
+							"value": "5ccf485019d940ba9cfec9a9",
+							"description": "test pipeline id",
+							"type": "text"
+						},
+						{
+							"key": "data_set_id",
+							"value": "51",
+							"description": "test data set id",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "crimson",
+							"description": "test username",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Cell Profiler Experiment",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Produce cell count",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/pipeline/start/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"pipeline",
+						"start",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Cell Post 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cell_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"Intensity_IntegratedIntensity_DAPI\",\n\t\t\t\"min\":2,\n\t\t\t\"max\":4\n\t\t},\n\t\t{\n\t\t\t\"key\":\"Location_CenterMassIntensity_X_dsRed\",\n\t\t\t\"min\":500,\n\t\t\t\"max\":1000\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/search/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Cell Post 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cell_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"Location_MaxIntensity_Y_DAPI\",\n\t\t\t\"value\":895\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/search/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Cell Post 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cell_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"Intensity_IntegratedIntensity_DAPI\",\n\t\t\t\"min\":2,\n\t\t\t\"max\":4\n\t\t},\n\t\t{\n\t\t\t\"key\":\"Location_MaxIntensity_Y_DAPI\",\n\t\t\t\"value\":895\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/search/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Well Post 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"well_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"ExecutionTime_02IdentifyPrimaryObjects\",\n\t\t\t\"value\":0.75\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/search/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Well Post 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"well_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"Count_IdentifyPrimaryObjects\",\n\t\t\t\"min\":400,\n\t\t\t\"max\":405\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/search/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Well Post 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"well_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"ExecutionTime_02IdentifyPrimaryObjects\",\n\t\t\t\"value\":0.75\n\t\t},\n\t\t{\n\t\t\t\"key\":\"Count_IdentifyPrimaryObjects\",\n\t\t\t\"min\":400,\n\t\t\t\"max\":405\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/search/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Cell Well Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cell_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"Intensity_IntegratedIntensity_DAPI\",\n\t\t\t\"min\":2,\n\t\t\t\"max\":4\n\t\t},\n\t\t{\n\t\t\t\"key\":\"Location_MaxIntensity_Y_DAPI\",\n\t\t\t\"value\":895\n\t\t}\n\t],\n\t\"well_level_summary\":\n\t[\n\t\t{\n\t\t\t\"key\":\"ExecutionTime_02IdentifyPrimaryObjects\",\n\t\t\t\"value\":0.75\n\t\t},\n\t\t{\n\t\t\t\"key\":\"Count_IdentifyPrimaryObjects\",\n\t\t\t\"min\":400,\n\t\t\t\"max\":405\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/search/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Scripts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/script/?username=harvard",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"script",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "harvard"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cellular Download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/cellprofiler/cellular/?run_id=5cc1c914d37740a7c549e6a3",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"cellprofiler",
+						"cellular",
+						""
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "5cc1c914d37740a7c549e6a3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wellular Download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/cellprofiler/wellular/?run_id=5cc1c914d37740a7c549e6a3",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"cellprofiler",
+						"wellular",
+						""
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "5cc1c914d37740a7c549e6a3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get File List Download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/cellprofiler/filelist/?run_id=5cc1c914d37740a7c549e6a3",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"cellprofiler",
+						"filelist",
+						""
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "5cc1c914d37740a7c549e6a3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Logs Download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/cellprofiler/logs/?run_id=5cc1c914d37740a7c549e6a3",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"cellprofiler",
+						"logs",
+						""
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "5cc1c914d37740a7c549e6a3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Script Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/script/delete/?script_id=5cc8624019d940ba9cfe783a",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"script",
+						"delete",
+						""
+					],
+					"query": [
+						{
+							"key": "script_id",
+							"value": "5cc8624019d940ba9cfe783a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/run/delete/?run_id=5cc9203d6eff5e24c427d667",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"run",
+						"delete",
+						""
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "5cc9203d6eff5e24c427d667"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Keys Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/run/updatekeys/?run_id=5ccbd28c9069322a24566349",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"run",
+						"updatekeys",
+						""
+					],
+					"query": [
+						{
+							"key": "run_id",
+							"value": "5ccbd28c9069322a24566349"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Script Download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/script/download/?pipeline_id=5caa3b5a19d940ba9cfc8533",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"script",
+						"download",
+						""
+					],
+					"query": [
+						{
+							"key": "pipeline_id",
+							"value": "5caa3b5a19d940ba9cfc8533"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pipeline Runs for User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/?username=harvard",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "harvard"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Pipeline Runs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/runs/?",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"runs",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "harvard",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Global Keys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/globalkeys/?",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"globalkeys",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "harvard",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dataset Ids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/omero/datasetid/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"omero",
+						"datasetid",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

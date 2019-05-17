@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "b22fa4df-28c9-4af4-997e-3f047bb236ff",
+		"name": "Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CellProfiler POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"job_id\":\"cellprofiler_run6\"}"
+				},
+				"url": {
+					"raw": "http://18.191.112.169:8081/v1/proto/",
+					"protocol": "http",
+					"host": [
+						"18",
+						"191",
+						"112",
+						"169"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"proto",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

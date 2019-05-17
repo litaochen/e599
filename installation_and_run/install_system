@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# save current dir
+prev_dir=$(pwd)
+
+# run the installation scripts (will cd to current directory after certain scripts due to directory jumping)
+./install_docker
+./install_nodejs
+sudo ./install_from_git
+cd ${prev_dir}
+./install_server
+cd ${prev_dir}
+./install_mongodb
+./install_luigi

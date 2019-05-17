@@ -1,0 +1,14 @@
+{
+    "scripts_directory" : "/home/ubuntu/bitbucket/scripts/pipeline/cppipe/",
+    "runs_directory" : "/home/ubuntu/bitbucket/scripts/pipeline/runs/",
+    "pipeline_directory" : "/home/ubuntu/bitbucket/scripts/pipeline/pipelines/get_file_list",
+    "cell_profiler_directory" : "/home/ubuntu/bitbucket/scripts/pipeline/pipelines/cell_profiler/",
+    "get_dataset_dir" : "/home/ubuntu/bitbucket/scripts/pipeline/pipelines/get_dataset_list/",
+    "aws_config" : "/home/ubuntu/bitbucket/scripts/pipeline/config/aws_config.json",
+    "pipeline_base_dir" : "/home/ubuntu/bitbucket/scripts/pipeline/",
+    "mongo_username" : "harvard",
+    "mongo_password" : "crimson",
+    "mongo_db_name" : "imagingdb",
+    "omero_username" : "root",
+    "omero_password" : "omero"
+}

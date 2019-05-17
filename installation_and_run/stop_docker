@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#stop the docker containers for postgres and omero
+docker stop postgres
+docker stop omero-server-5.3.5
+docker stop omero-web-5.3.5

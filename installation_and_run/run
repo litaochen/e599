@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker run -d --name postgres -e POSTGRES_PASSWORD=postgres postgres
+
+docker run -d --name omero-server-5.3.5 --link postgres:db -e CONFIG_omero_db_user=postgres -e CONFIG_omero_db_pass=postgres -e CONFIG_omero_db_name=postgres -e ROOTPASS=omero -p 4063:4063 -p 4064:4064 openmicroscopy/omero-server:5.3.5
+
+docker run -d --name omero-web-5.3.5 \
+-e OMEROHOST=18.191.161.127 \
+-p 4080:4080 \
+openmicroscopy/omero-web-standalone:5.3.5

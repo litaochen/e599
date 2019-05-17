@@ -1,0 +1,6 @@
+{
+   "webhost":"localhost",
+   "server":"18.191.112.169",
+   "python_path":"/opt/omero/server/OMERO.server-5.3.5-ice36-b73/lib/python",
+   "port":4064
+}

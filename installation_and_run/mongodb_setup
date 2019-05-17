@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#set up mongodb with a database and user
+sudo service mongodb start
+mongo --eval "use imagingdb"
+mongo --eval "db.createUser({user: 'harvard', pwd: 'crimson', roles: [{role: 'readWrite', db:'imagingdb'}]})"
+sudo service mongodb stop
+

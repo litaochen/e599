@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./run
+sudo service mongodb start
+sudo ./start_luigi_scheduler
+docker start postgres
+docker start omero-server-5.3.5
+docker start omero-web-5.3.5
+
